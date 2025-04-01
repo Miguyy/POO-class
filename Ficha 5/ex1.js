@@ -9,6 +9,8 @@ function addtable(gameName, launchDate, gameType) {
         <td>${gameName}</td>
         <td>${launchDate}</td>
         <td>${gameType}</td>
+        <td><button onclick="datalhesLinha(this)">Detalhes</button></td>
+        <td><button onclick="removerLinha(this)">Remover</button></td>
     </tr>`
 }
 
@@ -37,3 +39,13 @@ form.addEventListener('submit', event => {
 
     form.reset()
 })
+
+function detalhesLinha(botao){
+
+    
+    
+}
+
+function removerLinha(botao) {
+    botao.parentElement.parentElement.remove()
+}
