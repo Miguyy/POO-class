@@ -43,7 +43,6 @@ form.addEventListener('submit', event => {
 function detalhesLinha(botao){
 
     
-    
 }
 
 function removerLinha(botao) {
