@@ -41,8 +41,7 @@ form.addEventListener('submit', event => {
 })
 
 function detalhesLinha(botao){
-
-    
+    botao.parentElement.parentElement.alert("Detalhes do jogo: ")
 }
 
 function removerLinha(botao) {
