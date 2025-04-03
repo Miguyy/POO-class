@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    <h1>myCardioApp</h1>
+    <h2>Coronary Risk Calculator</h2>
+
+    <form action="" id="form">
+        <div id="dadosPessoais">
+            <div id="parteColestrol">
+                <label for="colestrolTotal">Colestrol Total</label>
+                <input type="number" id="colestrolTotal">
+            </div>
+            <div id="parteHdl">
+                <label for="hdl">HDL</label>
+                <input type="number" id="hdl">
+            </div>
+            <div id="parteHdl">
+                <label for="tg">Triglecerídeos</label>
+                <input type="number" id="tg">
+            </div>
+            <div id="parteCalculo">
+                <input type="button" id="botaoCalculadora" value="Calculcar LDL-C">
+            </div>
+            <div id="resultadosLdl">
+                <input type="text" id="ldl" disabled>
+            </div>
+            <div id="submeter">
+                <input type="submit" id="botaoSubmeter" value="Submeter">
+            </div>
+        </div>  
+    </form>
+    <div id="resultados">
+        <div>
+            <label for="seletorFiltro">Filtrar Risco Coronário</label>
+            <select name="" id="seletorFiltro">
+                <option value="Todos os registos">Todos os registos</option>
+                <option value="Alto Risco Coronário">Alto Risco Coronário</option>
+                <option value="Médio Risco Coronário">Médio Risco Coronário</option>
+                <option value="Baixo Risco Coronário">Baixo Risco Coronário</option>
+            </select>
+            <input type="button" id="botaoFiltrar" value="Filtrar Risco">
+            <input type="button" id="ordenarCrescente" value="Ordernar Crescente LDL-C">
+            <input type="button" id="ordenarDecrescente" value="Ordenar Descrescente LDL-C">
+        </div>
+        <table id="tabela" border="2">
+            <th>Colestrol</th>
+            <th>HDL</th>
+            <th>Triglicerideos</th>
+            <th>LDL</th>
+            <th>Risco Cardiovascular</th>
+        </table>
+    </div>
+    <script src="ex1.js"></script>
+
+</body>
+</html>
