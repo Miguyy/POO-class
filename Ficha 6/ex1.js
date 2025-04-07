@@ -34,7 +34,7 @@ form.addEventListener('submit', event => {
 })
 
 function calcResultados(){
-    risco=" "
+    risco=[]
     ldlTotal=0
     ldlTotal=colestrolTotal-hdlTotal-0.2*tgTotal
     if (ldlTotal<115&&ldlTotal>100){
@@ -60,6 +60,3 @@ document.getElementById("botaoCalculadora").addEventListener("click", function()
 
     document.getElementById("ldl").value = ldlTotal.toFixed(2)
 })
-
-
-
