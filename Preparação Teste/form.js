@@ -58,6 +58,12 @@ document.getElementById('botaoCalcTotal').addEventListener('click', event => {
     document.getElementById("resultadoTotal").value = `${total} `
 })
 
+document.getElementById("botaoFiltrar").addEventListener("click", event => {
+    event.preventDefault()
+    filtrarIMC()
+})
+
+
 //Evento crescente
 document.getElementById('ordenarCrescente').addEventListener('click', event => {
 
@@ -161,7 +167,7 @@ function editarLinha(botao){ //1º refresh ao form; 2º - selecionar a linha; 3�
     removerLinha(botao)
 }
 
-function ordernarCrescente(botao){ //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
+function ordernarCrescente(){ //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
     const tabela = document.querySelector("#tabela")
     const linhas = [...tabela.querySelectorAll("tr.data")]
 
@@ -170,7 +176,7 @@ function ordernarCrescente(botao){ //1º buscar a linha; 2º selecionar a linha 
     linhas.forEach(linha => tabela.appendChild(linha))
 }
 
-function ordernarDecrescente(botao){  //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
+function ordernarDecrescente(){  //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
     const tabela = document.querySelector("#tabela")
     const linhas = [...tabela.querySelectorAll("tr.data")]
 
@@ -179,12 +185,44 @@ function ordernarDecrescente(botao){  //1º buscar a linha; 2º selecionar a lin
     linhas.forEach(linha => tabela.appendChild(linha))
 }
 
-function filtrarIMC(){
-    switch (document.getElementById('seletorFiltro').value){
-        case "Magro": 
-            
-        case "Normal": 
+function filtrarIMC() {
+    const filtro = document.getElementById('seletorFiltro').value 
+    const linhas = document.querySelectorAll("tr.data") 
 
-        case "Obsedidade": 
-    }
+    linhas.forEach(linha => {
+        const imcTexto = linha.children[4].innerText
+
+        const imcCategoria = imcTexto.split(" - ")[1]
+
+        switch (filtro) {
+            case "Todos os registos":
+                linha.style.display = "table-row" 
+                break
+
+            case "Magro":
+                if (imcCategoria === "Magro") {
+                    linha.style.display = "table-row" 
+                } else {
+                    linha.style.display = "none"
+                }
+                break
+
+            case "Normal":
+                if (imcCategoria === "Normal")  {
+                    linha.style.display = "table-row" 
+                } else {
+                    linha.style.display = "none"
+                }
+                break
+
+            case "Obesidade":
+                if (imcCategoria === "Obesidade")  {
+                    linha.style.display = "table-row"
+                } else {
+                    linha.style.display = "none"
+                }
+                break
+        }
+    })
 }
+
