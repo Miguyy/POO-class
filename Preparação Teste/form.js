@@ -58,6 +58,19 @@ document.getElementById('botaoCalcTotal').addEventListener('click', event => {
     document.getElementById("resultadoTotal").value = `${total} `
 })
 
+//Evento crescente
+document.getElementById('ordenarCrescente').addEventListener('click', event => {
+
+    event.preventDefault()
+    ordernarCrescente()
+})
+
+//Evento decrescente
+document.getElementById('ordenarDecrescente').addEventListener('click', event => {
+
+    event.preventDefault()
+    ordernarDecrescente()
+})
 
 //Evento submeter do form
 form.addEventListener('submit', event => {
@@ -111,8 +124,67 @@ function removerLinha(botao) {
     botao.parentElement.parentElement.remove()
 } 
 
-ordenarBtn.addEventListener('click', () => {
-    ordenarBtn.textContent = ordemAscendente = 'Ordenar Z-A' 
-    renderizarTabela();
-})
+function detalhesLinhas(botao){ //1º - selecionar a linha; 2º - selecionar os campos ; 3º mostrar os campos
 
+    const linha = botao.parentElement.parentElement
+    const nome = linha.children[0].innerText
+    const idade = linha.children[1].innerText
+    const altura = linha.children[2].innerText
+    const peso = linha.children[3].innerText
+    const imc = linha.children[4].innerText
+    const total = linha.children[5].innerText
+
+    alert(`Nome: ${nome}\n Idade: ${idade}\n Altura: ${altura}\n Peso: ${peso}\n IMC: ${imc}\n Total: ${total}`)
+}
+
+function editarLinha(botao){ //1º refresh ao form; 2º - selecionar a linha; 3º - selecionar os campos ; 4º editar campos; 5º enviar novamente
+
+    form.reset()
+
+    const linha = botao.parentElement.parentElement
+    const nome = linha.children[0].innerText
+    const idade = linha.children[1].innerText
+    const altura = linha.children[2].innerText
+    const peso = linha.children[3].innerText
+    const imc = linha.children[4].innerText
+    const total = linha.children[5].innerText
+
+    document.getElementById('nome').value = nome
+    document.getElementById('idade').value = idade
+    document.getElementById('altura').value = altura
+    document.getElementById('peso').value = peso
+    document.getElementById('resultadoIMC').value = imc
+    document.getElementById('resultadoTotal').value = total
+    document.getElementById('botaoCalcIMC').click()
+    document.getElementById('botaoCalcTotal').click()
+    
+    removerLinha(botao)
+}
+
+function ordernarCrescente(botao){ //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
+    const tabela = document.querySelector("#tabela")
+    const linhas = [...tabela.querySelectorAll("tr.data")]
+
+    linhas.sort((a, b) => a.cells[0].innerText.localeCompare(b.cells[0].innerText))
+
+    linhas.forEach(linha => tabela.appendChild(linha))
+}
+
+function ordernarDecrescente(botao){  //1º buscar a linha; 2º selecionar a linha a e b; 3º comparar as linhas; 4º ordernar; 5º adicionar a nova linha
+    const tabela = document.querySelector("#tabela")
+    const linhas = [...tabela.querySelectorAll("tr.data")]
+
+    linhas.sort((a, b) => b.cells[0].innerText.localeCompare(a.cells[0].innerText))
+
+    linhas.forEach(linha => tabela.appendChild(linha))
+}
+
+function filtrarIMC(){
+    switch (document.getElementById('seletorFiltro').value){
+        case "Magro": 
+            
+        case "Normal": 
+
+        case "Obsedidade": 
+    }
+}
