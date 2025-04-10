@@ -78,6 +78,12 @@ document.getElementById('ordenarDecrescente').addEventListener('click', event =>
     ordernarDecrescente()
 })
 
+document.getElementById('guardarDados').addEventListener('click', event => {
+    event.preventDefault()
+    const imc = document.getElementById('resultadoIMC').value
+    localStorage.setItem('resultadoIMC', imc)
+})
+
 //Evento submeter do form
 form.addEventListener('submit', event => {
 
