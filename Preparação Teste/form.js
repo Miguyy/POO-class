@@ -78,10 +78,21 @@ document.getElementById('ordenarDecrescente').addEventListener('click', event =>
     ordernarDecrescente()
 })
 
+//Evento guardar dados
 document.getElementById('guardarDados').addEventListener('click', event => {
     event.preventDefault()
-    const imc = document.getElementById('resultadoIMC').value
-    localStorage.setItem('resultadoIMC', imc)
+    localStorage.setItem("infos", JSON.stringify(info))
+    console.log("Dados guardados.")
+})
+
+//Evento obter dados
+document.getElementById('obterDados').addEventListener('click', event => {
+    event.preventDefault()
+    let infos = JSON.parse(localStorage.getItem("infos"))
+    document.querySelectorAll("tr.data").forEach(row => row.remove())
+    infos.forEach(pessoa => {
+        addtable(pessoa.nome, pessoa.idade, pessoa.altura, pessoa.peso, pessoa.imc, pessoa.total)
+    })
 })
 
 //Evento submeter do form
@@ -231,4 +242,15 @@ function filtrarIMC() {
         }
     })
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    let infos = JSON.parse(localStorage.getItem("infos"))
+
+    if (infos) {
+        info = infos 
+        infos.forEach(pessoa => {
+            addtable(pessoa.nome, pessoa.idade, pessoa.altura, pessoa.peso, pessoa.imc, pessoa.total)
+        })
+    }
+})
 
