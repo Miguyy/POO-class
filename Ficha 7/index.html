@@ -27,20 +27,20 @@
 
         <form class="form-group" id="idForm">
             <div class="col-md-6 has-validation">
-                <input type="text" class="form-control" id="txtActivity" value="" placeholder="Task name">
+                <input type="text" class="form-control" id="txtActivity" value="" placeholder="Task name" required>
             </div>
             
             <div class="col-md-12 has-validation">
-                <input type="text" class="form-control" id="txtDescription" size="45" placeholder="Task Description">
+                <input type="text" class="form-control" id="txtDescription" size="45" placeholder="Task Description" required>
             </div>
 
             <div class="col-md-6 has-validation">
-                <input type="datetime-local" class="form-control" id="txtData" value="" placeholder="Task Date">
+                <input type="datetime-local" class="form-control" id="txtData" value="" placeholder="Task Date" required>
             </div>
 
             <div class="col-md-6 has-validation">
                     <!--     <label for="txtStatus" class="form-label">Activity Status</label> -->
-                        <select name="txtStatus" id="idStatus">
+                        <select name="txtStatus" id="idStatus" required>
                             <option value="Select an option" selected disabled>Select an option</option>
                             <option value="ToDoList">ToDoList</option>
                             <option value="In Progress">InProgress</option>

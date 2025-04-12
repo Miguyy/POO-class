@@ -35,30 +35,6 @@ return tasks;
 
 }
 
-const form = document.getElementById("idForm")
-
-function addGrid(nameValue, descriptionValue, yearValue, categoryValue) {
-
-    let grid = document.querySelector(".grid")
-
-    grid.innerHTML += `
-    <div class="card">
-        <h3>${nameValue}</h3>
-        <p>${descriptionValue}</p>
-        <p>${yearValue}</p>
-        <p>${categoryValue}</p>
-    </tr>`
-}
-
-form.addEventListener('submit', event => {
-
-    event.preventDefault()
-
-    const name = document.getElementById('txtActivity').value.trim()
-    const description = document.getElementById('txtDescription').value.value.trim()
-    const year = document.getElementById('txtData').value.trim()
-    const category = document.getElementById('idStatus').value.value.trim()
-
     /* const dateInput = document.getElementById('txtData').value.value.trim()
     const date = new Date(dateInput)
     const now = new Date()
@@ -79,64 +55,8 @@ form.addEventListener('submit', event => {
         return
     } */
 
-    const newForm = {name, description, year, category}
 
-    tasks.push(newForm)
-    console.log(tasks)
-
-    addGrid(name, description, year, category)
-   /*  renderTasks() */
-    form.reset()
-
-    filterTasks()
-})
-
-
-
-function filterTasks() {
-    const category = document.getElementById('idStatus').value 
-    const rows = document.querySelectorAll("grid.card") 
-
-    rows.forEach(row => {
-        const categoryText = row.children[3].innerText
-
-        switch (category) {
-            case "ToDoList":
-                if (categoryText === "ToDoList") {
-                    row.style.display = "grid-row" 
-                } else {
-                    row.style.display = "none"
-                }
-                break
-
-            case "InProgress":
-                if (categoryText === "InProgress") {
-                    row.style.display = "grid-row" 
-                } else {
-                    row.style.display = "none"
-                }
-                break
-
-            case "InReview":
-                if (categoryText === "InReview") {
-                    row.style.display = "grid-row" 
-                } else {
-                    row.style.display = "none"
-                }
-                break
-
-            case "Done":
-                if (categoryText === "Done") {
-                    row.style.display = "grid-row" 
-                } else {
-                    row.style.display = "none"
-                }
-                break
-        }
-    })
-}
-
-function renderTasks(filteredStatus=null){
+/* function renderTasks(filteredStatus=null){
     grid.InnerHTML = ""
     filteredStatus.forEach(task => 
     {
@@ -150,7 +70,7 @@ function renderTasks(filteredStatus=null){
     switch (task.status){
         
     }
-}
+} */
 
 
 
