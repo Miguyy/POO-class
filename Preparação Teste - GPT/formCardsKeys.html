@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form & Cards & Keys</title>
+    <link rel="stylesheet" href="formCardsKeys.css">
+</head>
+<body>
+    <h1>Gestor de Registos</h1>
+
+    <!-- Formulário de Registo -->
+    <form id="form-registo">
+      <input type="text" id="titulo" placeholder="Título" required />
+      <input type="text" id="descricao" placeholder="Descrição" required />
+      <input type="text" id="categoria" placeholder="Categoria" required />
+      
+      <!-- Calendário com restrição de datas -->
+      <input type="datetime-local" id="data" required min="" />
+
+      <select id="prioridade" required>
+        <option value="" disabled selected>Prioridade</option>
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+      </select>
+      <button type="submit">Adicionar Registo</button>
+    </form>
+
+    <!-- Filtro por Prioridade -->
+    <div>
+      <label for="filtro-prioridade">Filtrar por Prioridade: </label>
+      <select id="filtro-prioridade">
+        <option value="Todas">Todas</option>
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+      </select>
+      <button type="" id="botaoFiltrar">Filtrar</button>
+      <input type="button" id="ordenarCrescente" value="Ordem Crescente">
+      <input type="button" id="ordenarDecrescente" value="Ordem Descrescente">
+    </div>
+
+    <section>
+      <h2>Tabela de Registos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoria</th>
+            <th>Prioridade</th>
+            <th>Data</th>
+            <th colspan="3">Acções</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-registos"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Cards de Registos</h2>
+      <div id="cards-container" class="cards-container"></div>
+    </section>
+
+    <!--GRID - CARDS-->
+    <div class="grid" id="grid">
+        <div class="card">
+            <h3>Titulo</h3>
+            <p>Categoria</p>
+            <p>Prioridade</p>
+            <p>Data</p>
+        </div>
+    </div>
+
+    <script src="formCardsKeys.js"></script>
+</body>
+</html>
