@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Preço Total</title>
+</head>
+<body>
+  <h1>Calculadora de Preço Total</h1>
+
+  <form id="formulario-calculo">
+    <label for="produto">Produto:</label>
+    <input type="text" id="produto" name="produto" required />
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade" name="quantidade" required />
+
+    <label for="preco">Preço Unitário (€):</label>
+    <input type="number" id="preco" name="preco" step="0.01" required />
+
+    <label for="total">Total (€):</label>
+    <input type="text" id="total" name="total" readonly />
+
+    <button type="submit">Calcular e Guardar</button>
+  </form>
+
+  <h2>Histórico</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço Unitário (€)</th>
+        <th>Total (€)</th>
+        <th>Acções</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-historico">
+      <!-- Linhas adicionadas dinamicamente -->
+    </tbody>
+  </table>
+
+  <script src="form.js"></script>
+</body>
+</html>
