@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Consultas Médicas</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Gestão de Consultas</h1>
+
+    <section class="form-section">
+      <h2>Nova Consulta</h2>
+      <form id="consulta-form">
+        <select id="paciente-select" required></select>
+        <input type="text" id="especialidade" placeholder="Especialidade (ex: Cardiologia)" required />
+        <input type="date" id="data-consulta" required />
+        <button type="submit">Agendar Consulta</button>
+      </form>
+    </section>
+
+    <section class="dashboard">
+      <h2>Consultas Agendadas</h2>
+      <table id="dashboard-table">
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Especialidade</th>
+            <th>Data</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

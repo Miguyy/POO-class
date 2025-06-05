@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestão de Biblioteca</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <h1>Gestão de Biblioteca</h1>
+
+  <section id="adicionar-livro">
+    <h2>Adicionar Livro</h2>
+    <form id="form-livro">
+      <input type="text" id="titulo" placeholder="Título" required />
+      <input type="text" id="autor" placeholder="Autor" required />
+      <input type="number" id="ano" placeholder="Ano" required min="0" />
+      <input type="number" id="total-exemplares" placeholder="Número total de exemplares" required min="1" />
+      <button type="submit">Adicionar Livro</button>
+    </form>
+  </section>
+
+  <section id="adicionar-utilizador">
+    <h2>Adicionar Utilizador</h2>
+    <form id="form-utilizador">
+      <input type="text" id="nome-utilizador" placeholder="Nome do Utilizador" required />
+      <button type="submit">Adicionar Utilizador</button>
+    </form>
+  </section>
+
+  <section id="emprestimos">
+    <h2>Registar Empréstimo</h2>
+    <form id="form-emprestimo">
+      <select id="select-utilizador" required></select>
+      <select id="select-livro" required></select>
+      <button type="submit">Registar Empréstimo</button>
+    </form>
+  </section>
+
+  <section id="dashboard">
+    <h2>Livros Disponíveis</h2>
+    <table id="livros-tabela">
+      <thead>
+        <tr><th>Título</th><th>Autor</th><th>Ano</th><th>Disponíveis</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Empréstimos Ativos</h2>
+    <table id="emprestimos-tabela">
+      <thead>
+        <tr><th>Utilizador</th><th>Livro</th><th>Ação</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
