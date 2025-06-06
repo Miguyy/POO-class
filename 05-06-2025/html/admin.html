@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modo Admin</title>
+</head>
+<body>
+  <h1>Adicionar Nova Série</h1>
+  <form id="serieForm">
+    <input type="text" id="nomeSerie" placeholder="Nome da Série" required /><br/>
+    <input type="number" id="anoSerie" placeholder="Ano de Lançamento" required /><br/>
+    <input type="url" id="capaSerie" placeholder="URL da Capa (opcional)" /><br/>
+    <select id="atoresSelect" multiple></select><br/>
+    <input type="text" id="novoAtorInput" placeholder="Outro ator/atriz" style="display:none;" /><br/>
+    <button type="submit">Adicionar Série</button>
+  </form>
+  <p id="mensagem" style="color:green;"></p>
+  <script type="views" src="../js/views/AdminView.jsS"></script>
+  
+</body>
+</html>
