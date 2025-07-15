@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Curador</title>
+    
+</head>
+
+<body>
+    <h1>Adicionar Obra</h1>
+    <input type="text" id="titulo" placeholder="Título da obra">
+    <input type="number" id="ano" placeholder="Ano">
+    <input type="text" id="imagem" placeholder="URL da imagem (opcional)">
+
+    <select id="artistas" multiple>
+    </select>
+
+    <div id="outroArtistaDiv" style="display:none">
+        <input type="text" id="novoArtista" placeholder="Novo nome do artista">
+    </div>
+
+    <button id="adicionarBtn">Adicionar Obra</button>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/models/artistaModel.js"></script>
+    <script src="./js/models/ObraModel.js"></script>
+    <script src="./js/views/curadorView.js"></script>
+    <script src="./js/views/eventHandlersView.js"></script>
+</body>
+</html>
